@@ -43,6 +43,7 @@
     name:
       - duf
     state: latest
+  # yamllint disable-line rule:line-length
   when: ansible_distribution == "Ubuntu" and ansible_distribution_release == 'jammy'
 
 - name: Ensure dnf package manager is installed. (RedHat Family)
