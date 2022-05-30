@@ -1,0 +1,44 @@
+" This file loads the default vim options at the beginning and prevents
+" that they are being loaded again later. All other options that will be set,
+" are added, or overwrite the default settings. Add as many options as you
+" whish at the end of this file.
+
+" Load the defaults
+source $VIMRUNTIME/defaults.vim
+
+" Prevent the defaults from being loaded again later, if the user doesn't
+" have a local vimrc (~/.vimrc)
+let skip_defaults_vim = 1
+
+
+" Set more options (overwrites settings from /usr/share/vim/vim80/defaults.vim)
+" Add as many options as you whish
+
+" Set the mouse mode to 'r'
+if has('mouse')
+  set mouse=r
+endif
+
+" Vim5 and later versions support syntax highlighting.
+if has("syntax")
+  syntax on
+endif
+
+" If using a dark background within the editing area and syntax highlighting
+" turn on this option as well
+set background=dark
+
+" Disable compatibility with vi which can cause unexpected issues.
+set nocompatible
+
+" Enable type file detection. Vim will be able to try to detect the type of file in use.
+filetype on
+
+" Enable plugins and load plugin for the detected file type.
+filetype plugin on
+
+" Load an indent file for the detected file type.
+filetype indent on
+
+" Add numbers to each line on the left-hand side.
+"set number

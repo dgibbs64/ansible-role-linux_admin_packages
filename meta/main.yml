@@ -1,0 +1,30 @@
+galaxy_info:
+  author: Daniel Gibbs
+  company: none
+  description: Useful packages for Linux Administrators
+  license: MIT
+  min_ansible_version: "2.10"
+  namespace: dgibbs64
+  role_name: linux_admin_packages
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+    - name: EL
+      versions:
+        - 7
+        - 8
+
+  galaxy_tags:
+    - system
+    - monitoring
+    - ubuntu
+
+dependencies: []
