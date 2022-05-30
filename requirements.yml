@@ -1,3 +1,5 @@
 ---
 roles:
   - name: robertdebock.bootstrap
+  - name: robertdebock.epel
+  - role: robertdebock.core_dependencies
