@@ -1,6 +1,6 @@
 ---
 - name: apt update
-  apt:
+  ansible.builtin.apt:
     update_cache: true
     cache_valid_time: 3600
     autoclean: true
@@ -8,7 +8,7 @@
   when: ansible_os_family == "Debian"
 
 - name: ensure linux admin packages are available
-  package:
+  ansible.builtin.package:
     name:
       - vim
       - nano
@@ -25,7 +25,7 @@
     state: latest
 
 - name: ensure linux admin packages are available (Debian Family)
-  apt:
+  ansible.builtin.apt:
     name:
       - mailutils
       - neofetch
@@ -33,14 +33,14 @@
   when: ansible_os_family == "Debian"
 
 - name: ensure linux admin packages are available (Ubuntu)
-  apt:
+  ansible.builtin.apt:
     name:
       - glances
     state: latest
   when: ansible_distribution == "Ubuntu"
 
 - name: ensure linux admin packages are available (Ubuntu 22.04)
-  apt:
+  ansible.builtin.apt:
     name:
       - duf
     state: latest
@@ -48,21 +48,21 @@
   when: ansible_distribution == "Ubuntu" and ansible_distribution_release == 'jammy'
 
 - name: Ensure dnf package manager is installed. (RedHat Family)
-  yum:
+  ansible.builtin.yum:
     name:
       - dnf
     state: latest
   when: ansible_os_family == "RedHat"
 
 - name: ensure linux admin packages are available (RedHat Family)
-  dnf:
+  ansible.builtin.dnf:
     name:
       - mailx
     state: latest
   when: ansible_os_family == "RedHat"
 
 - name: ensure linux admin packages are available (RedHat 8 Family)
-  dnf:
+  ansible.builtin.dnf:
     name:
       - neofetch
       - glances
@@ -70,13 +70,13 @@
   when: ansible_os_family == "RedHat" and ansible_distribution_version == '8'
 
 - name: Ensure vimrc.local is set (Debian Family)
-  copy:
+  ansible.builtin.copy:
     src: vimrc.local
     dest: "/etc/vim/vimrc.local"
   when: ansible_os_family == "Debian"
 
 - name: Ensure vimrc.local is set (RedHat Family)
-  copy:
+  ansible.builtin.copy:
     src: vimrc.local
     dest: "/etc/vimrc"
   when: ansible_os_family == "RedHat"
