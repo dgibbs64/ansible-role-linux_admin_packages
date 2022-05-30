@@ -5,4 +5,4 @@
   gather_facts: true
 
   roles:
-    name: ansible-role-linux-admin-packages
+    - role: ansible-role-linux-admin-packages
