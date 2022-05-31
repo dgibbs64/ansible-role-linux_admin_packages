@@ -23,7 +23,7 @@ None.
 - name: Linux Admin Packages
   hosts: all
   roles:
-     dgibbs64.**linux_admin_packages**
+     dgibbs64.linux_admin_packages
 ```
 ## License
 
