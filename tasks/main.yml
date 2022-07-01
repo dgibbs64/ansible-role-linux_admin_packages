@@ -10,18 +10,19 @@
 - name: ensure linux admin packages are available
   ansible.builtin.package:
     name:
-      - vim
-      - nano
+      - atop
       - htop
       - iftop
       - iotop
-      - ncdu
       - jq
-      - zip
-      - unzip
+      - lynx
       - mlocate
-      - atop
+      - nano
+      - ncdu
       - tldr
+      - unzip
+      - vim
+      - zip
     state: latest
 
 - name: ensure linux admin packages are available (Debian Family)
