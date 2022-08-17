@@ -22,14 +22,17 @@ None.
 ---
 - name: Linux Admin Packages
   hosts: all
-  roles:
-     dgibbs64.linux_admin_packages
+  roles: dgibbs64.linux_admin_packages
 ```
+
 ## License
 
 MIT
 
 ## Author Information
 
-- [Daniel Gibbs](https://danielgibbs.co.uk)
+-   [Daniel Gibbs](https://danielgibbs.co.uk)
+
+```
+
 ```

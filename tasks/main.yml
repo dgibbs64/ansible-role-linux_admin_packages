@@ -10,18 +10,19 @@
 - name: ensure linux admin packages are available
   ansible.builtin.package:
     name:
-      - vim
-      - nano
+      - atop
       - htop
       - iftop
       - iotop
-      - ncdu
       - jq
-      - zip
-      - unzip
+      - lynx
       - mlocate
-      - atop
+      - nano
+      - ncdu
       - tldr
+      - unzip
+      - vim
+      - zip
     state: latest
 
 - name: ensure linux admin packages are available (Debian Family)
@@ -44,10 +45,9 @@
     name:
       - duf
     state: latest
-  # yamllint disable-line rule:line-length
   when: ansible_distribution == "Ubuntu" and ansible_distribution_release == 'jammy'
 
-- name: Ensure dnf package manager is installed. (RedHat Family)
+- name: ensure dnf package manager is installed. (RedHat Family)
   ansible.builtin.yum:
     name:
       - dnf
@@ -69,7 +69,7 @@
     state: latest
   when: ansible_os_family == "RedHat" and ansible_distribution_version == '8'
 
-- name: Ensure vimrc.local is set (Debian Family)
+- name: ensure vimrc.local is set (Debian Family)
   ansible.builtin.copy:
     src: vimrc.local
     dest: "/etc/vim/vimrc.local"
@@ -77,10 +77,16 @@
     owner: root
   when: ansible_os_family == "Debian"
 
-- name: Ensure vimrc.local is set (RedHat Family)
+- name: ensure vimrc.local is set (RedHat Family)
   ansible.builtin.copy:
     src: vimrc.local
     dest: "/etc/vimrc"
     mode: 0644
     owner: root
   when: ansible_os_family == "RedHat"
+
+- name: ensure date and time added to history
+  ansible.builtin.lineinfile:
+    path: "/etc/profile"
+    line: 'export HISTTIMEFORMAT="%d/%m/%y %T "'
+    state: present

@@ -1,0 +1,8 @@
+# It extends the default yamllint conf by adjusting some options.
+---
+extends: default
+
+rules:
+  line-length:
+    max: 150
+  comments: disable
