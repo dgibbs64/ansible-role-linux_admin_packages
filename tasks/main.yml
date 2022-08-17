@@ -45,7 +45,6 @@
     name:
       - duf
     state: latest
-  # yamllint disable-line rule:line-length
   when: ansible_distribution == "Ubuntu" and ansible_distribution_release == 'jammy'
 
 - name: ensure dnf package manager is installed. (RedHat Family)
@@ -88,6 +87,6 @@
 
 - name: ensure date and time added to history
   ansible.builtin.lineinfile:
-    path: "~/.bash_profile"
-    regexp: "export HISTTIMEFORMAT=\"%d/%m/%y %T \""
+    path: "/etc/profile"
+    regexp: 'export HISTTIMEFORMAT="%d/%m/%y %T "'
     state: present
