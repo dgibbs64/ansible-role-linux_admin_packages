@@ -88,5 +88,5 @@
 - name: ensure date and time added to history
   ansible.builtin.lineinfile:
     path: "/etc/profile"
-    regexp: 'export HISTTIMEFORMAT="%d/%m/%y %T "'
+    line: 'export HISTTIMEFORMAT="%d/%m/%y %T "'
     state: present
