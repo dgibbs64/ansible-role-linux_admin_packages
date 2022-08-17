@@ -6,21 +6,20 @@
 name: Ansible Molecule
 on:
   push:
+    tags_ignore:
+      - "*"
   pull_request:
   schedule:
-    - cron: "3 2 2 * *"
+    - cron: "51 22 26 * *"
+
 jobs:
   lint:
     runs-on: ubuntu-20.04
     steps:
       - name: checkout
         uses: actions/checkout@v3
-        with:
-          path: "${{ github.repository }}"
-      - name: molecule
-        uses: robertdebock/molecule-action@4.0.9
-        with:
-          command: lint
+      - name: ansible-lint
+        uses: ansible-community/ansible-lint-action@main
   test:
     needs:
       - lint
@@ -29,18 +28,21 @@ jobs:
       fail-fast: false
       matrix:
         config:
+          - image: "amazonlinux"
+            tag: "latest"
+          - image: "enterpriselinux"
+            tag: "8"
           - image: "debian"
             tag: "latest"
           - image: "debian"
             tag: "bookworm"
-          - image: "amazonlinux"
-            tag: "latest"
-          - image: "enterpriselinux"
-            tag: "7"
-          - image: "enterpriselinux"
-            tag: "latest"
           - image: "fedora"
             tag: "35"
+          - image: "fedora"
+            tag: "latest"
+          - image: "fedora"
+            tag: "rawhide"
+
           - image: "ubuntu"
             tag: "latest"
           - image: "ubuntu"
