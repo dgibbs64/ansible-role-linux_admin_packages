@@ -1,8 +1,11 @@
-# It extends the default yamllint conf by adjusting some options.
 ---
 extends: default
 
 rules:
-  line-length:
-    max: 150
+  line-length: disable
   comments: disable
+
+ignore: |
+  .tox/
+  .cache/
+  .github/workflows

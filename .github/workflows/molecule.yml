@@ -26,21 +26,18 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - image: "amazonlinux"
+          - image: "rockylinux"
             tag: "latest"
-          - image: "enterpriselinux"
-            tag: "8"
+          - image: "centos"
+            tag: "7"
           - image: "debian"
             tag: "latest"
           - image: "debian"
             tag: "bookworm"
           - image: "fedora"
-            tag: "35"
-          - image: "fedora"
             tag: "latest"
           - image: "fedora"
             tag: "rawhide"
-
           - image: "ubuntu"
             tag: "latest"
           - image: "ubuntu"

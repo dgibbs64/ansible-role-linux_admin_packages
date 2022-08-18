@@ -31,8 +31,4 @@ MIT
 
 ## Author Information
 
--   [Daniel Gibbs](https://danielgibbs.co.uk)
-
-```
-
-```
+- [Daniel Gibbs](https://danielgibbs.co.uk)
