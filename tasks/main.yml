@@ -15,7 +15,6 @@
       - iftop
       - iotop
       - jq
-      - lynx
       - mlocate
       - nano
       - ncdu
@@ -30,6 +29,7 @@
     name:
       - mailutils
       - neofetch
+      - lynx
     state: latest
   when: ansible_os_family == "Debian"
 
@@ -37,6 +37,7 @@
   ansible.builtin.apt:
     name:
       - glances
+      - lynx
     state: latest
   when: ansible_distribution == "Ubuntu"
 
@@ -45,7 +46,7 @@
     name:
       - duf
     state: latest
-  when: ansible_distribution == "Ubuntu" and ansible_distribution_release == 'jammy'
+  when: ansible_distribution == "Ubuntu" and ansible_distribution_release == "jammy"
 
 - name: ensure dnf package manager is installed. (RedHat Family)
   ansible.builtin.yum:
@@ -61,13 +62,20 @@
     state: latest
   when: ansible_os_family == "RedHat"
 
+- name: ensure linux admin packages are available (RedHat 7 Family)
+  ansible.builtin.dnf:
+    name:
+      - lynx
+    state: latest
+  when: ansible_os_family == "RedHat" and ansible_distribution_version == "7"
+
 - name: ensure linux admin packages are available (RedHat 8 Family)
   ansible.builtin.dnf:
     name:
       - neofetch
       - glances
     state: latest
-  when: ansible_os_family == "RedHat" and ansible_distribution_version == '8'
+  when: ansible_os_family == "RedHat" and ansible_distribution_version == "8"
 
 - name: ensure vimrc.local is set (Debian Family)
   ansible.builtin.copy:
