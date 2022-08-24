@@ -11,6 +11,7 @@
   ansible.builtin.package:
     name:
       - atop
+      - colordiff
       - htop
       - iftop
       - iotop
@@ -71,7 +72,7 @@
 
 - name: ensure vimrc.local is set (Debian Family)
   ansible.builtin.copy:
-    src: vimrc.local
+    src: "vimrc.local"
     dest: "/etc/vim/vimrc.local"
     mode: 0644
     owner: root
@@ -79,7 +80,7 @@
 
 - name: ensure vimrc.local is set (RedHat Family)
   ansible.builtin.copy:
-    src: vimrc.local
+    src: "vimrc.local"
     dest: "/etc/vimrc"
     mode: 0644
     owner: root
@@ -90,3 +91,10 @@
     path: "/etc/profile"
     line: 'export HISTTIMEFORMAT="%d/%m/%y %T "'
     state: present
+
+- name: ensure .bash_aliases is set
+  ansible.builtin.copy:
+    src: ".bash_aliases"
+    dest: "~/.bash_aliases"
+    mode: 0644
+    owner: root
