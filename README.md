@@ -1,7 +1,10 @@
 # linux_admin_packages
 
-An [Ansible](https://www.ansible.com) role to install various useful packages for Linux Administrators for Debian and RedHat based distros.
-As well as add global basic vimrc from [amix](https://github.com/amix/vimrc) and add date stamps to history.
+An [Ansible](https://www.ansible.com) role that:
+* installs various useful packages for Linux Administrators on Debian and RedHat based distros.
+* adds global basic vimrc from [amix](https://github.com/amix/vimrc).
+* adds date stamps to history.
+* adds useful bash aliases.
 
 Please see tasks/main.yml for the list of packages installed.
 
