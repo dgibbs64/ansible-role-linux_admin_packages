@@ -1,0 +1,13 @@
+alias mkdir='mkdir -pv'
+alias df="df -h"
+alias c='clear'
+alias diff='colordiff'
+alias h='history'
+alias ports='ss -tuplwn'
+alias reboot='sudo reboot'
+alias update='sudo apt update; sudo apt upgrade -y; sudo apt autoremove -y'
+alias upgrade='sudo apt update; sudo apt upgrade -y; sudo apt autoremove -y'
+alias install='sudo apt update; sudo apt install'
+alias header='curl -I'
+alias nginxreload='sudo systemctl reload nginx'
+alias apachereload='sudo systemctl reload apache2'

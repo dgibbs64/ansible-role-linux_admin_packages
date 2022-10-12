@@ -2,7 +2,7 @@
 galaxy_info:
   author: Daniel Gibbs
   company: none
-  description: Useful packages for Linux Administrators
+  description: Useful packages and settings for Linux Administrators
   license: MIT
   min_ansible_version: "2.10"
   namespace: dgibbs64
