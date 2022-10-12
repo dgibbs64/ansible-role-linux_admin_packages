@@ -1,5 +1,5 @@
 ---
-- name: apt update
+- name: Apt update
   ansible.builtin.apt:
     update_cache: true
     cache_valid_time: 3600
@@ -7,7 +7,7 @@
     autoremove: true
   when: ansible_os_family == "Debian"
 
-- name: ensure linux admin packages are available
+- name: Ensure linux admin packages are available
   ansible.builtin.package:
     name:
       - colordiff
@@ -24,7 +24,7 @@
       - zip
     state: latest
 
-- name: ensure linux admin packages are available (Debian Family)
+- name: Ensure linux admin packages are available (Debian Family)
   ansible.builtin.apt:
     name:
       - mailutils
@@ -33,7 +33,7 @@
     state: latest
   when: ansible_os_family == "Debian"
 
-- name: ensure linux admin packages are available (Ubuntu)
+- name: Ensure linux admin packages are available (Ubuntu)
   ansible.builtin.apt:
     name:
       - glances
@@ -41,35 +41,35 @@
     state: latest
   when: ansible_distribution == "Ubuntu"
 
-- name: ensure linux admin packages are available (Ubuntu 22.04)
+- name: Ensure linux admin packages are available (Ubuntu 22.04)
   ansible.builtin.apt:
     name:
       - duf
     state: latest
   when: ansible_distribution == "Ubuntu" and ansible_distribution_release == "jammy"
 
-- name: ensure dnf package manager is installed. (RedHat Family)
+- name: Ensure dnf package manager is installed. (RedHat Family)
   ansible.builtin.yum:
     name:
       - dnf
     state: latest
   when: ansible_os_family == "RedHat"
 
-- name: ensure linux admin packages are available (RedHat Family)
+- name: Ensure linux admin packages are available (RedHat Family)
   ansible.builtin.dnf:
     name:
       - mailx
     state: latest
   when: ansible_os_family == "RedHat"
 
-- name: ensure linux admin packages are available (RedHat 7 Family)
+- name: Ensure linux admin packages are available (RedHat 7 Family)
   ansible.builtin.dnf:
     name:
       - lynx
     state: latest
   when: ansible_os_family == "RedHat" and ansible_distribution_version == "7"
 
-- name: ensure linux admin packages are available (RedHat 8 Family)
+- name: Ensure linux admin packages are available (RedHat 8 Family)
   ansible.builtin.dnf:
     name:
       - neofetch
@@ -77,7 +77,7 @@
     state: latest
   when: ansible_os_family == "RedHat" and ansible_distribution_version == "8"
 
-- name: ensure vimrc.local is set (Debian Family)
+- name: Ensure vimrc.local is set (Debian Family)
   ansible.builtin.copy:
     src: "vimrc.local"
     dest: "/etc/vim/vimrc.local"
@@ -85,7 +85,7 @@
     owner: root
   when: ansible_os_family == "Debian"
 
-- name: ensure vimrc.local is set (RedHat Family)
+- name: Ensure vimrc.local is set (RedHat Family)
   ansible.builtin.copy:
     src: "vimrc.local"
     dest: "/etc/vimrc"
@@ -93,13 +93,13 @@
     owner: root
   when: ansible_os_family == "RedHat"
 
-- name: ensure date and time added to history
+- name: Ensure date and time added to history
   ansible.builtin.lineinfile:
     path: "/etc/profile"
     line: 'export HISTTIMEFORMAT="%d/%m/%y %T "'
     state: present
 
-- name: ensure .bash_aliases is set
+- name: Ensure .bash_aliases is set
   ansible.builtin.copy:
     src: ".bash_aliases"
     dest: "~/.bash_aliases"
