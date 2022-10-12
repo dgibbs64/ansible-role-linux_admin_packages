@@ -10,7 +10,6 @@
 - name: ensure linux admin packages are available
   ansible.builtin.package:
     name:
-      - atop
       - htop
       - iftop
       - iotop
