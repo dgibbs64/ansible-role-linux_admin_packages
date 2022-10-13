@@ -93,11 +93,12 @@
     owner: root
   when: ansible_os_family == "RedHat"
 
-- name: Ensure date and time added to history
-  ansible.builtin.lineinfile:
-    path: "/etc/profile"
-    line: 'export HISTTIMEFORMAT="%d/%m/%y %T "'
-    state: present
+- name: Ensure histformat.sh is set
+  ansible.builtin.copy:
+    src: "histformat.sh"
+    dest: "/etc/profile.d/histformat.sh"
+    mode: 0644
+    owner: root
 
 - name: Ensure .bash_aliases is set
   ansible.builtin.copy:
