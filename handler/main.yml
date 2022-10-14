@@ -1,0 +1,5 @@
+---
+- name: restart sysstat service
+  ansible.builtin.service:
+    name: sysstat
+    state: restarted

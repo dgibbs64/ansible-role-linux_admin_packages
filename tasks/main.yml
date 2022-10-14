@@ -18,6 +18,7 @@
       - mlocate
       - nano
       - ncdu
+      - sysstat
       - tldr
       - unzip
       - vim
@@ -83,7 +84,7 @@
     dest: "/etc/vim/vimrc.local"
     mode: 0644
     owner: root
-  when: ansible_os_family == "Debian"
+  when: ansible_os_family == "Debian" and vimrc
 
 - name: Ensure vimrc.local is set (RedHat Family)
   ansible.builtin.copy:
@@ -91,7 +92,7 @@
     dest: "/etc/vimrc"
     mode: 0644
     owner: root
-  when: ansible_os_family == "RedHat"
+  when: ansible_os_family == "RedHat" and vimrc
 
 - name: Ensure histformat.sh is set
   ansible.builtin.copy:
@@ -106,3 +107,12 @@
     dest: "~/.bash_aliases"
     mode: 0644
     owner: root
+
+- name: Enable sysstat logging
+  ansible.builtin.lineinfile:
+    path: /etc/default/sysstat
+    regexp: "^ENABLED="
+    line: "ENABLED=\"true\""
+    state: present
+  notify: restart sysstat
+  when: ansible_os_family == "Debian" and systat_logging_enabled

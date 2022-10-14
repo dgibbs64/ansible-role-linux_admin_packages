@@ -1,2 +1,5 @@
 ---
-# defaults file for linux_admin_packagess
+bash_aliases: true
+histformat: true
+systat_logging_enabled: false
+vimrc: true
