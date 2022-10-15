@@ -11,6 +11,10 @@ Packages installed
 
 Please see [vars/main.yml](https://github.com/dgibbs64/ansible-role-linux-admin-packages/blob/main/vars/main.yml) for the list of packages installed.
 
+|GitHub|Quality|Downloads|Version|
+|------|-------|---------|-------|
+|[![github](https://github.com/dgibbs64/ansible-role-linux_admin_packages/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-bootstrap/actions)|[![quality](https://img.shields.io/ansible/quality/59358)](https://galaxy.ansible.com/dgibbs64/linux_admin_packages)|[![downloads](https://img.shields.io/ansible/role/d/59358)](https://galaxy.ansible.com/dgibbs64/linux_admin_packages)|[![Version](https://img.shields.io/github/release/dgibbs64/ansible-role-linux_admin_packages.svg)](https://github.com/dgibbs64/linux_admin_packages/releases/)|
+
 ## Requirements
 
 None.
