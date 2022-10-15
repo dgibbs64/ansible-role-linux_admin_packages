@@ -1,0 +1,72 @@
+---
+- name: Apt update (Debian Family)
+  become: true
+  ansible.builtin.apt:
+    update_cache: true
+    cache_valid_time: 3600
+    autoclean: true
+    autoremove: true
+  when: ansible_os_family == "Debian"
+
+- name: Ensure linux admin packages are available
+  become: true
+  ansible.builtin.package:
+    name: "{{ global_packages }}"
+    state: latest
+
+- name: Ensure linux admin packages are available (Debian Family)
+  become: true
+  ansible.builtin.apt:
+    name: "{{ debian_packages }}"
+    state: latest
+  when: ansible_os_family == "Debian"
+
+- name: Ensure linux admin packages are available (Ubuntu)
+  become: true
+  ansible.builtin.apt:
+    name: "{{ ubuntu_packages }}"
+    state: latest
+  when: ansible_distribution == "Ubuntu"
+
+- name: Ensure linux admin packages are available (Ubuntu 22.04)
+  become: true
+  ansible.builtin.apt:
+    name: "{{ ubuntu_jammy_packages }}"
+    state: latest
+  when: ansible_distribution == "Ubuntu" and ansible_distribution_release == "jammy"
+
+- name: Ensure dnf package manager is installed. (RedHat Family)
+  become: true
+  ansible.builtin.yum:
+    name:
+      - dnf
+    state: latest
+  when: ansible_os_family == "RedHat"
+
+- name: Ensure linux admin packages are available (RedHat Family)
+  become: true
+  ansible.builtin.dnf:
+    name: "{{ redhat_packages }}"
+    state: latest
+  when: ansible_os_family == "RedHat"
+
+- name: Ensure linux admin packages are available (RedHat 7 Family)
+  become: true
+  ansible.builtin.dnf:
+    name: "{{ redhat_7_packages }}"
+    state: latest
+  when: ansible_os_family == "RedHat" and ansible_distribution_version == "7"
+
+- name: Ensure linux admin packages are available (RedHat 8 Family)
+  become: true
+  ansible.builtin.dnf:
+    name: "{{ redhat_8_packages }}"
+    state: latest
+  when: ansible_os_family == "RedHat" and ansible_distribution_version == "8"
+
+- name: Ensure linux admin packages are available (RedHat 9 Family)
+  become: true
+  ansible.builtin.dnf:
+    name: "{{ redhat_9_packages }}"
+    state: latest
+  when: ansible_os_family == "RedHat" and ansible_distribution_version == "9"

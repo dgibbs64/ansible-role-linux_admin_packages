@@ -1,0 +1,9 @@
+---
+- name: Enable sysstat logging
+  ansible.builtin.lineinfile:
+    path: /etc/default/sysstat
+    regexp: "^ENABLED="
+    line: "ENABLED=\"true\""
+    state: present
+  notify: restart sysstat
+  when: ansible_os_family == "Debian" and systat_logging_enabled

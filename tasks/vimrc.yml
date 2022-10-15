@@ -1,0 +1,18 @@
+---
+- name: Ensure vimrc.local is set (Debian Family)
+  become: true
+  ansible.builtin.copy:
+    src: "vimrc.local"
+    dest: "/etc/vim/vimrc.local"
+    mode: 0644
+    owner: root
+  when: ansible_os_family == "Debian" and vimrc
+
+- name: Ensure vimrc.local is set (RedHat Family)
+  become: true
+  ansible.builtin.copy:
+    src: "vimrc.local"
+    dest: "/etc/vimrc"
+    mode: 0644
+    owner: root
+  when: ansible_os_family == "RedHat" and vimrc

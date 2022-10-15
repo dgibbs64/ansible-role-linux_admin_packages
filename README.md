@@ -1,12 +1,15 @@
 # linux_admin_packages
 
 An [Ansible](https://www.ansible.com) role that:
-* installs various useful packages for Linux Administrators on Debian and RedHat based distros.
-* adds global basic vimrc from [amix](https://github.com/amix/vimrc).
-* adds date stamps to history.
-* adds useful bash aliases.
 
-Please see tasks/main.yml for the list of packages installed.
+- installs various useful packages for Linux Administrators on Debian and RedHat based distros.
+- adds global basic vimrc from [amix](https://github.com/amix/vimrc).
+- adds date stamps to history.
+- enables systat logging `/var/log/sysstat`.
+
+Packages installed
+
+Please see [vars/main.yml](https://github.com/dgibbs64/ansible-role-linux-admin-packages/blob/main/vars/main.yml) for the list of packages installed.
 
 ## Requirements
 
@@ -14,7 +17,11 @@ None.
 
 ## Role Variables
 
-None.
+```
+histformat: true
+systat_logging_enabled: true
+vimrc: true
+```
 
 ## Dependencies
 
@@ -26,6 +33,7 @@ None.
 ---
 - name: Linux Admin Packages
   hosts: all
+  become: true
   roles: dgibbs64.linux_admin_packages
 ```
 

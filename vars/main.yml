@@ -1,2 +1,43 @@
 ---
 # vars file for linux_admin_packages
+
+global_packages:
+  - colordiff
+  - htop
+  - iftop
+  - iotop
+  - jq
+  - mlocate
+  - nano
+  - ncdu
+  - sysstat
+  - tldr
+  - unzip
+  - vim
+  - zip
+
+debian_packages:
+  - mailutils
+  - neofetch
+  - lynx
+
+ubuntu_packages:
+  - glances
+  - lynx
+
+ubuntu_jammy_packages:
+  - duf
+
+redhat_packages:
+  - mailx
+
+redhat_7_packages:
+  - lynx
+
+redhat_8_packages:
+  - neofetch
+  - glances
+
+redhat_9_packages:
+  - neofetch
+  - glances

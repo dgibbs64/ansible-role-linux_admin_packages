@@ -1,5 +1,4 @@
 ---
-bash_aliases: true
 histformat: true
-systat_logging_enabled: false
+systat_logging_enabled: true
 vimrc: true
