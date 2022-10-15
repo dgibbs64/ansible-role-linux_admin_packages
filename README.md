@@ -17,7 +17,7 @@ None.
 
 ## Role Variables
 
-```
+```yaml
 histformat: true
 systat_logging_enabled: true
 vimrc: true
