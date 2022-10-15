@@ -22,6 +22,7 @@ None.
 ## Role Variables
 
 ```yaml
+---
 history_time_format: true
 systat_logging_enabled: true
 vimrc: true
