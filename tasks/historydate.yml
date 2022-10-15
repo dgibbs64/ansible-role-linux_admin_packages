@@ -1,9 +1,9 @@
 ---
-- name: Ensure histformat.sh is set
+- name: Ensure history_time_format.sh is set
   become: true
   ansible.builtin.copy:
-    src: "histformat.sh"
-    dest: "/etc/profile.d/histformat.sh"
+    src: "history_time_format.sh"
+    dest: "/etc/profile.d/history_time_format.sh"
     mode: 0644
     owner: root
-  when: histformat
+  when: history_time_format
