@@ -5,5 +5,5 @@
     regexp: "^ENABLED="
     line: 'ENABLED="true"'
     state: present
-  notify: restart sysstat
+  notify: Restart sysstat
   when: ansible_os_family == "Debian" and systat_logging_enabled
