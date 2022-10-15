@@ -3,7 +3,7 @@
   ansible.builtin.lineinfile:
     path: /etc/default/sysstat
     regexp: "^ENABLED="
-    line: "ENABLED=\"true\""
+    line: 'ENABLED="true"'
     state: present
   notify: restart sysstat
   when: ansible_os_family == "Debian" and systat_logging_enabled
