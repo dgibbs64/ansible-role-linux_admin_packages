@@ -1,5 +1,6 @@
 ---
 - name: restart sysstat
+  become: true
   ansible.builtin.service:
     name: sysstat
     state: restarted
