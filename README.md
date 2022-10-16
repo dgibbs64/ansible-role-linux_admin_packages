@@ -9,7 +9,7 @@ An [Ansible](https://www.ansible.com) role that:
 
 Packages installed
 
-Please see [vars/main.yml](https://github.com/dgibbs64/ansible-role-linux-admin-packages/blob/main/vars/main.yml) for the list of packages installed.
+Please see [vars/main.yml](https://github.com/dgibbs64/ansible-role-linux_admin_packages/blob/main/vars/main.yml) for the list of packages installed.
 
 |GitHub|Quality|Downloads|Version|
 |------|-------|---------|-------|
