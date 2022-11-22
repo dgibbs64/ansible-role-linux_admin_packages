@@ -2,7 +2,7 @@
 - name: prepare
   hosts: all
   become: true
-  gather_facts: false
+  gather_facts: true
 
   roles:
     - role: robertdebock.bootstrap

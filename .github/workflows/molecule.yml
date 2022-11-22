@@ -12,7 +12,7 @@ on:
 
 jobs:
   lint:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v3
@@ -21,17 +21,21 @@ jobs:
   test:
     needs:
       - lint
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     strategy:
-      fail-fast: false
       matrix:
-        config:
-          - image: "rockylinux8"
-            tag: "latest"
-          - image: "centos7"
-            tag: "latest"
-          - image: "ubuntu1804"
-            tag: "latest"
+        image:
+          - ubuntu2204
+          - ubuntu2004
+          - rockylinux9
+          - rockylinux8
+          - centos7
+          - centos6
+          - debian11
+          - debian10
+          - debian9
+          - fedora36
+          - fedora35
     steps:
       - name: checkout
         uses: actions/checkout@v3
@@ -40,5 +44,5 @@ jobs:
       - name: molecule
         uses: robertdebock/molecule-action@4.0.9
         with:
-          image: ${{ matrix.config.image }}
-          tag: ${{ matrix.config.tag }}
+          image: "${{ matrix.image }}"
+          options: parallel
