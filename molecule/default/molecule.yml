@@ -9,7 +9,7 @@ lint: |
   ansible-lint
 platforms:
   - name: "linux-admin-packages-${image:-centos8}-${tag:-latest}${TOX_ENVNAME}"
-    image: geerlingguy/docker-${MOLECULE_DISTRO:-centos8}-ansible:latest
+    image: geerlingguy/docker-${image:-centos8}-ansible:${tag:-latest}
     command: ""
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
