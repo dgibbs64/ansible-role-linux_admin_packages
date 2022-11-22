@@ -26,33 +26,17 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - image: "rockylinux"
+          - image: "rockylinux8"
             tag: "latest"
-          - image: "centos"
-            tag: "7"
-          - image: "debian"
+          - image: "centos7"
             tag: "latest"
-          - image: "debian"
-            tag: "bookworm"
-          - image: "fedora"
+          - image: "ubuntu1804"
             tag: "latest"
-          - image: "fedora"
-            tag: "rawhide"
-          - image: "ubuntu"
-            tag: "latest"
-          - image: "ubuntu"
-            tag: "focal"
-          - image: "ubuntu"
-            tag: "bionic"
     steps:
       - name: checkout
         uses: actions/checkout@v3
         with:
           path: "${{ github.repository }}"
-      - name: disable apparmor for mysql
-        run: sudo ln -s /etc/apparmor.d/usr.sbin.mysqld /etc/apparmor.d/disable/
-      - name: parse apparmor for mysql
-        run: sudo apparmor_parser -R /etc/apparmor.d/usr.sbin.mysqld
       - name: molecule
         uses: robertdebock/molecule-action@4.0.9
         with:
