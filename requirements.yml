@@ -1,5 +1,6 @@
 ---
 roles:
+  - name: robertdebock.update_package_cache
   - name: robertdebock.bootstrap
   - name: robertdebock.core_dependencies
   - name: robertdebock.epel
