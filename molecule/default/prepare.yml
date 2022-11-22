@@ -5,6 +5,7 @@
   gather_facts: true
 
   roles:
+    - role: robertdebock.update_package_cache
     - role: robertdebock.bootstrap
     - role: robertdebock.epel
     - role: robertdebock.core_dependencies
