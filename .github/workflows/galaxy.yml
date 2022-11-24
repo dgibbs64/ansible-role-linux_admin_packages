@@ -7,8 +7,8 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - name: Ansible Publish
-        uses: ansible/ansible-publish-action@v1.0.0
+      - name: galaxy
+        uses: robertdebock/galaxy-action@1.2.1
         with:
-          api_key: ${{ secrets.galaxy_api_key }}
+          galaxy_api_key: ${{ secrets.galaxy_api_key }}
           git_branch: main
