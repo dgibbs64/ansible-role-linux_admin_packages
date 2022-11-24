@@ -11,33 +11,42 @@ global_packages:
   - nano
   - ncdu
   - sysstat
-  - tldr
   - unzip
   - vim
   - zip
 
 debian_packages:
+  - lynx
   - mailutils
   - neofetch
-  - lynx
+
+debian11_packages:
+  - tldr
+
+debian10_packages:
+  - tldr
 
 ubuntu_packages:
   - glances
   - lynx
+  - tldr
 
 ubuntu_jammy_packages:
   - duf
 
 redhat_packages:
-  - mailx
+  - tldr
 
 redhat_7_packages:
   - lynx
+  - mailx
 
 redhat_8_packages:
-  - neofetch
   - glances
+  - mailx
+  - neofetch
 
 redhat_9_packages:
-  - neofetch
   - glances
+  - neofetch
+  - s-nail
