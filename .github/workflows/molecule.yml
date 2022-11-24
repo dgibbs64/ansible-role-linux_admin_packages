@@ -31,7 +31,6 @@ jobs:
           - rockylinux9
           - rockylinux8
           - centos7
-          - centos6
           - debian11
           - debian10
           - debian9
