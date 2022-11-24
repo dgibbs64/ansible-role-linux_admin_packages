@@ -1,5 +1,5 @@
 ---
-- name: Ensure vimrc.local is set (Debian Family)
+- name: "Ensure vimrc.local is set (Debian Family)"
   become: true
   ansible.builtin.copy:
     src: "vimrc.local"
@@ -8,7 +8,7 @@
     owner: root
   when: ansible_os_family == "Debian" and vimrc
 
-- name: Ensure vimrc.local is set (RedHat Family)
+- name: "Ensure vimrc.local is set (RedHat Family)"
   become: true
   ansible.builtin.copy:
     src: "vimrc.local"

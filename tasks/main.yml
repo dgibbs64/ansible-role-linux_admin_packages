@@ -1,12 +1,12 @@
 ---
-- name: Packages
+- name: "Packages"
   ansible.builtin.import_tasks: packages.yml
 
-- name: History Date
+- name: "History Date"
   ansible.builtin.import_tasks: historydate.yml
 
-- name: Vimrc
+- name: "Vimrc"
   ansible.builtin.import_tasks: vimrc.yml
 
-- name: Sysstat
+- name: "Sysstat"
   ansible.builtin.import_tasks: sysstat.yml

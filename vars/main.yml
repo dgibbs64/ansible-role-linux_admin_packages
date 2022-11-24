@@ -1,6 +1,5 @@
 ---
 # vars file for linux_admin_packages
-
 global_packages:
   - colordiff
   - htop
