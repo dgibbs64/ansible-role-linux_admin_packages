@@ -1,5 +1,5 @@
 ---
-- name: Enable sysstat logging
+- name: "Enable sysstat logging"
   ansible.builtin.lineinfile:
     path: /etc/default/sysstat
     regexp: "^ENABLED="

@@ -1,5 +1,5 @@
 ---
-- name: Ensure history_time_format.sh is set
+- name: "Ensure history_time_format.sh is set"
   become: true
   ansible.builtin.copy:
     src: "history_time_format.sh"
