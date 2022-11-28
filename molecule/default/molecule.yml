@@ -1,16 +1,16 @@
 ---
 dependency:
   name: galaxy
-driver:
-  name: docker
 lint: |
   set -e
   yamllint .
   ansible-lint
+driver:
+  name: docker
 platforms:
-  - name: "linux-admin-packages-${image:-centos8}-${tag:-latest}${TOX_ENVNAME}"
-    image: geerlingguy/docker-${image:-centos8}-ansible:${tag:-latest}
-    command: ""
+  - name: "linux_admin_packages-${MOLECULE_IMAGE:-ubuntu2204}"
+    image: "geerlingguy/docker-${MOLECULE_IMAGE:-ubuntu2204}-ansible:latest"
+    command: ${MOLECULE_DOCKER_COMMAND:-""}
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true

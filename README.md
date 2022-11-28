@@ -17,7 +17,7 @@ Please see [vars/main.yml](https://github.com/dgibbs64/ansible-role-linux_admin_
 <a href="https://galaxy.ansible.com/dgibbs64/linux_admin_packages"><img alt="Ansible Quality Score" src="https://img.shields.io/ansible/quality/59356?logo=ansible&style=flat-square"></a>
 <a href="https://galaxy.ansible.com/dgibbs64/linux_admin_packages"><img alt="Ansible Role" src="https://img.shields.io/ansible/role/d/59356?color=EE0000&logo=ansible&style=flat-square"></a>
 <a href="https://galaxy.ansible.com/dgibbs64/linux_admin_packages"><img alt="GitHub release (latest SemVer)" src="https://img.shields.io/github/v/release/dgibbs64/ansible-role-linux_admin_packages?logo=ansible&logoColor=github&style=flat-square"></a>
-<a href="/LICENSE.md"><img src="https://img.shields.io/github/license/gameservermanagers/docker-steamcmd?style=flat-square" alt="MIT License"></a>
+<a href="/LICENSE.md"><img src="https://img.shields.io/github/license/dgibbs64/ansible-role-linux_admin_packages?style=flat-square" alt="MIT License"></a>
 </p>
 
 ## Requirements
