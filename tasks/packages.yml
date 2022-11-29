@@ -1,6 +1,5 @@
 ---
-- name: Gather facts distribution)
-  become: true
+- name: "Gather facts (distribution)"
   ansible.builtin.setup:
     gather_subset:
       - "distribution"
