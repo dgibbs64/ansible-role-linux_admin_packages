@@ -14,24 +14,48 @@ global_packages:
   - vim
   - zip
 
-debian_packages:
+#Debian Family
+debian_family_packages:
+  - glances
   - lynx
   - mailutils
   - neofetch
 
+# Debian
+debian_packages:
+
+# Bullseye
 debian11_packages:
   - tldr
 
+# Buster
 debian10_packages:
   - tldr
 
+# Stretch
+debian9_packages:
+
+# Ubuntu
 ubuntu_packages:
   - glances
   - lynx
   - tldr
-
-ubuntu_jammy_packages:
   - duf
+
+# Jammy Jellyfish
+ubuntu_2204_packages:
+  - neofetch
+
+# Focal Fossa
+ubuntu_2004_packages:
+  - neofetch
+
+# Bionic Beaver
+ubuntu_1804_packages:
+  - neofetch
+
+# Xenial Xerus
+ubuntu_1604_packages:
 
 redhat_packages:
   - tldr
@@ -41,11 +65,13 @@ redhat_7_packages:
   - mailx
 
 redhat_8_packages:
+  - lynx
   - glances
   - mailx
   - neofetch
 
 redhat_9_packages:
+  - lynx
   - glances
   - neofetch
   - s-nail

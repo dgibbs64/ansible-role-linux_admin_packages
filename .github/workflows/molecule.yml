@@ -43,7 +43,6 @@ jobs:
           - debian10
           - debian11
           - debian9
-          - debian9
           - fedora35
           - fedora36
           - rockylinux8
@@ -52,8 +51,6 @@ jobs:
           - ubuntu1804
           - ubuntu2004
           - ubuntu2204
-          - amazonlinux2
-          - ubi8
     steps:
       - name: Checkout
         uses: actions/checkout@v3
