@@ -42,8 +42,8 @@ ubuntu_packages:
 
 # Jammy Jellyfish
 ubuntu_2204_packages:
-  - neofetch
   - duf
+  - neofetch
 
 # Focal Fossa
 ubuntu_2004_packages:
@@ -59,20 +59,18 @@ ubuntu_1804_packages:
 ubuntu_1604_packages:
 
 redhat_packages:
+  - lynx
   - tldr
 
 redhat_7_packages:
-  - lynx
   - mailx
 
 redhat_8_packages:
-  - lynx
   - glances
   - mailx
   - neofetch
 
 redhat_9_packages:
-  - lynx
   - glances
   - neofetch
   - s-nail
