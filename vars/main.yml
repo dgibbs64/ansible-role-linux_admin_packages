@@ -39,7 +39,6 @@ debian9_packages:
 ubuntu_packages:
   - glances
   - lynx
-  - tldr
   - duf
 
 # Jammy Jellyfish
@@ -49,10 +48,12 @@ ubuntu_2204_packages:
 # Focal Fossa
 ubuntu_2004_packages:
   - neofetch
+  - tldr
 
 # Bionic Beaver
 ubuntu_1804_packages:
   - neofetch
+  - tldr
 
 # Xenial Xerus
 ubuntu_1604_packages:
