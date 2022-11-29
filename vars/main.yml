@@ -39,11 +39,11 @@ debian9_packages:
 ubuntu_packages:
   - glances
   - lynx
-  - duf
 
 # Jammy Jellyfish
 ubuntu_2204_packages:
   - neofetch
+  - duf
 
 # Focal Fossa
 ubuntu_2004_packages:
