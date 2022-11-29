@@ -87,11 +87,11 @@
     state: latest
   when: ansible_os_family == "RedHat"
 
-- name: "Ensure linux admin packages are available (RedHat 7 Family)"
+- name: "Ensure linux admin packages are available (RedHat 9 Family)"
   ansible.builtin.dnf:
-    name: "{{ redhat_7_packages }}"
+    name: "{{ redhat_9_packages }}"
     state: latest
-  when: ansible_os_family == "RedHat" and ansible_distribution_version == "7"
+  when: ansible_os_family == "RedHat" and ansible_distribution_version == "9"
 
 - name: "Ensure linux admin packages are available (RedHat 8 Family)"
   ansible.builtin.dnf:
@@ -99,8 +99,8 @@
     state: latest
   when: ansible_os_family == "RedHat" and ansible_distribution_version == "8"
 
-- name: "Ensure linux admin packages are available (RedHat 9 Family)"
+- name: "Ensure linux admin packages are available (RedHat 7 Family)"
   ansible.builtin.dnf:
-    name: "{{ redhat_9_packages }}"
+    name: "{{ redhat_7_packages }}"
     state: latest
-  when: ansible_os_family == "RedHat" and ansible_distribution_version == "9"
+  when: ansible_os_family == "RedHat" and ansible_distribution_version == "7"
