@@ -2,8 +2,8 @@
 - name: Gather facts distribution)
   become: true
   ansible.builtin.setup:
-    filter:
-      - "ansible_distribution"
+    gather_subset:
+      - "distribution"
 
 - name: "Update apt cache (Debian Family)"
   ansible.builtin.apt:
