@@ -25,8 +25,9 @@ debian_packages:
 
 # Bullseye
 debian11_packages:
-  - tldr
+  - bpytop
   - plocate
+  - tldr
 
 # Buster
 debian10_packages:
@@ -44,6 +45,7 @@ ubuntu_packages:
 
 # Jammy Jellyfish
 ubuntu_2204_packages:
+  - bpytop
   - duf
   - neofetch
   - plocate
@@ -69,12 +71,14 @@ redhat_packages:
   - tldr
 
 redhat_9_packages:
+  - bpytop
   - glances
   - neofetch
-  - s-nail
   - plocate
+  - s-nail
 
 redhat_8_packages:
+  - bpytop
   - glances
   - mailx
   - neofetch
