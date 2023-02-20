@@ -1,7 +1,6 @@
 ---
 # vars file for linux_admin_packages
 global_packages:
-  - colordiff
   - htop
   - iftop
   - iotop
@@ -16,6 +15,7 @@ global_packages:
 
 #Debian Family
 debian_family_packages:
+  - colordiff
   - glances
   - lynx
   - mailutils
@@ -37,6 +37,7 @@ debian9_packages:
 
 # Ubuntu
 ubuntu_packages:
+  - colordiff
   - glances
   - lynx
 
