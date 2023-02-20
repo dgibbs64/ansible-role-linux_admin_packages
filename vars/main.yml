@@ -5,7 +5,6 @@ global_packages:
   - iftop
   - iotop
   - jq
-  - mlocate
   - nano
   - ncdu
   - sysstat
@@ -26,14 +25,18 @@ debian_packages:
 
 # Bullseye
 debian11_packages:
+  - bpytop
+  - plocate
   - tldr
 
 # Buster
 debian10_packages:
   - tldr
+  - mlocate
 
 # Stretch
 debian9_packages:
+  - mlocate
 
 # Ubuntu
 ubuntu_packages:
@@ -43,35 +46,45 @@ ubuntu_packages:
 
 # Jammy Jellyfish
 ubuntu_2204_packages:
+  - bpytop
   - duf
   - neofetch
+  - plocate
 
 # Focal Fossa
 ubuntu_2004_packages:
   - neofetch
   - tldr
+  - mlocate
 
 # Bionic Beaver
 ubuntu_1804_packages:
   - neofetch
   - tldr
+  - mlocate
 
 # Xenial Xerus
 ubuntu_1604_packages:
+  - mlocate
 
 redhat_packages:
   - lynx
   - tldr
 
-redhat_7_packages:
-  - mailx
+redhat_9_packages:
+  - bpytop
+  - glances
+  - neofetch
+  - plocate
+  - s-nail
 
 redhat_8_packages:
+  - bpytop
   - glances
   - mailx
   - neofetch
+  - plocate
 
-redhat_9_packages:
-  - glances
-  - neofetch
-  - s-nail
+redhat_7_packages:
+  - mailx
+  - mlocate
