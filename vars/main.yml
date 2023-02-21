@@ -1,12 +1,9 @@
 ---
 # vars file for linux_admin_packages
 global_packages:
-  - htop
-  - iftop
   - iotop
   - jq
   - nano
-  - ncdu
   - sysstat
   - unzip
   - vim
@@ -16,8 +13,11 @@ global_packages:
 debian_family_packages:
   - colordiff
   - glances
+  - htop
+  - iftop
   - lynx
   - mailutils
+  - ncdu
   - neofetch
 
 # Debian
@@ -42,7 +42,10 @@ debian9_packages:
 ubuntu_packages:
   - colordiff
   - glances
+  - htop
+  - iftop
   - lynx
+  - ncdu
 
 # Jammy Jellyfish
 ubuntu_2204_packages:
@@ -68,23 +71,47 @@ ubuntu_1604_packages:
   - mlocate
 
 redhat_packages:
-  - lynx
-  - tldr
 
 redhat_9_packages:
-  - bpytop
-  - glances
-  - neofetch
-  - plocate
+  - lynx
+  - mlocate
   - s-nail
 
-redhat_8_packages:
-  - bpytop
+redhat_9_epel_packages:
+  - colordiff
   - glances
-  - mailx
+  - htop
+  - iftop
+  - ncdu
   - neofetch
-  - plocate
+  - tldr
 
-redhat_7_packages:
+redhat_8_packages:
   - mailx
   - mlocate
+
+redhat_8_epel_packages:
+  - bpytop
+  - colordiff
+  - glances
+  - htop
+  - iftop
+  - ncdu
+  - neofetch
+  - tldr
+
+redhat_8_powertools_packages:
+  - lynx
+
+redhat_7_packages:
+  - lynx
+  - mailx
+  - mlocate
+
+redhat_7_epel_packages:
+  - colordiff
+  - glances
+  - htop
+  - iftop
+  - ncdu
+  - tldr

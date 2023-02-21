@@ -80,26 +80,59 @@
     state: latest
   when: ansible_os_family == "RedHat"
 
-- name: "Ensure linux admin packages are available (RedHat Family)"
-  ansible.builtin.dnf:
-    name: "{{ redhat_packages }}"
-    state: latest
+# - name: "Ensure linux admin packages are available (RedHat Family)"
+#   ansible.builtin.dnf:
+#     name: "{{ redhat_packages }}"
+#     state: latest
+#   when: ansible_os_family == "RedHat"
+
+- name: "Get EPEL repository information (RedHat Family) (epel)"
+  ansible.builtin.stat:
+    path: "{{ epel_repofile_path }}"
+  register: epel_repofile_result
   when: ansible_os_family == "RedHat"
 
 - name: "Ensure linux admin packages are available (RedHat 9 Family)"
   ansible.builtin.dnf:
     name: "{{ redhat_9_packages }}"
     state: latest
-  when: ansible_os_family == "RedHat" and ansible_distribution_version == "9"
+  when: ansible_os_family == "RedHat" and ansible_distribution_major_version == "9"
+
+- name: "Ensure linux admin packages are available (RedHat 9 Family) (epel)"
+  ansible.builtin.dnf:
+    name: "{{ redhat_9_epel_packages }}"
+    state: latest
+  when:
+    - ansible_os_family == "RedHat"
+    - ansible_distribution_major_version == "9"
+    - epel_repofile_result.stat.exists
 
 - name: "Ensure linux admin packages are available (RedHat 8 Family)"
   ansible.builtin.dnf:
     name: "{{ redhat_8_packages }}"
     state: latest
-  when: ansible_os_family == "RedHat" and ansible_distribution_version == "8"
+  when: ansible_os_family == "RedHat" and ansible_distribution_major_version == "8"
+
+- name: "Ensure linux admin packages are available (RedHat 8 Family) (epel)"
+  ansible.builtin.dnf:
+    name: "{{ redhat_8_epel_packages }}"
+    state: latest
+  when:
+    - ansible_os_family == "RedHat"
+    - ansible_distribution_major_version == "8"
+    - epel_repofile_result.stat.exists
 
 - name: "Ensure linux admin packages are available (RedHat 7 Family)"
   ansible.builtin.dnf:
     name: "{{ redhat_7_packages }}"
     state: latest
-  when: ansible_os_family == "RedHat" and ansible_distribution_version == "7"
+  when: ansible_os_family == "RedHat" and ansible_distribution_major_version == "7"
+
+- name: "Ensure linux admin packages are available (RedHat 7 Family) (epel)"
+  ansible.builtin.dnf:
+    name: "{{ redhat_7_epel_packages }}"
+    state: latest
+  when:
+    - ansible_os_family == "RedHat"
+    - ansible_distribution_major_version == "7"
+    - epel_repofile_result.stat.exists
