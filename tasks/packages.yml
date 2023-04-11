@@ -3,6 +3,7 @@
   ansible.builtin.setup:
     gather_subset:
       - "distribution"
+  when: ansible_facts['ansible_os_family'] is not defined or ansible_facts['ansible_distribution'] is not defined
 
 - name: "Update apt cache (Debian Family)"
   ansible.builtin.apt:
