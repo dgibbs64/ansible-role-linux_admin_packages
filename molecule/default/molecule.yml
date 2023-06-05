@@ -8,7 +8,7 @@ lint: |
 driver:
   name: docker
 platforms:
-  - name: "linux_admin_packages-${MOLECULE_IMAGE:-ubuntu2204}"
+  - name: "${MOLECULE_IMAGE:-ubuntu2204}"
     image: "geerlingguy/docker-${MOLECULE_IMAGE:-ubuntu2204}-ansible:latest"
     command: ${MOLECULE_DOCKER_COMMAND:-""}
     volumes:

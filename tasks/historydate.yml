@@ -3,6 +3,6 @@
   ansible.builtin.copy:
     src: "history_time_format.sh"
     dest: "/etc/profile.d/history_time_format.sh"
-    mode: 0644
-    owner: root
+    mode: "0644"
+    owner: "root"
   when: history_time_format

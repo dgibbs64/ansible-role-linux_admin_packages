@@ -2,6 +2,5 @@
 - name: "Converge"
   hosts: all
   gather_facts: false
-
   roles:
     - role: "dgibbs64.linux_admin_packages"
