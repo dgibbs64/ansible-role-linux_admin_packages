@@ -115,3 +115,15 @@ redhat_7_epel_packages:
   - iftop
   - ncdu
   - tldr
+
+fedora_packages:
+  - colordiff
+  - glances
+  - htop
+  - iftop
+  - lynx
+  - mlocate
+  - ncdu
+  - neofetch
+  - s-nail
+  - tldr
