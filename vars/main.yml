@@ -2,7 +2,6 @@
 # vars file for linux_admin_packages
 global_packages:
   - iotop
-  - jq
   - nano
   - sysstat
   - unzip
@@ -15,6 +14,7 @@ debian_family_packages:
   - glances
   - htop
   - iftop
+  - jq
   - lynx
   - mailutils
   - ncdu
@@ -73,6 +73,7 @@ ubuntu_1604_packages:
 redhat_packages:
 
 redhat_9_packages:
+  - jq
   - lynx
   - mlocate
   - s-nail
@@ -87,6 +88,7 @@ redhat_9_epel_packages:
   - tldr
 
 redhat_8_packages:
+  - jq
   - mailx
   - mlocate
 
@@ -113,6 +115,7 @@ redhat_7_epel_packages:
   - glances
   - htop
   - iftop
+  - jq
   - ncdu
   - tldr
 
