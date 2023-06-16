@@ -130,13 +130,13 @@
     - epel_repofile_result.stat.exists
 
 - name: "Ensure linux admin packages are available (RedHat 7 Family)"
-  ansible.builtin.dnf:
+  ansible.builtin.yum:
     name: "{{ redhat_7_packages }}"
     state: latest
   when: ansible_os_family == "RedHat" and ansible_distribution_major_version == "7"
 
 - name: "Ensure linux admin packages are available (RedHat 7 Family) (epel)"
-  ansible.builtin.dnf:
+  ansible.builtin.yum:
     name: "{{ redhat_7_epel_packages }}"
     state: latest
   when:
