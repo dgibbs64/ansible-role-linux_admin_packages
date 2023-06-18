@@ -23,9 +23,18 @@ debian_family_packages:
 # Debian
 debian_packages:
 
+# Bookworm
+debian12_packages:
+  - btop
+  - bpytop
+  - gdu
+  - plocate
+  - tldr
+
 # Bullseye
 debian11_packages:
   - bpytop
+  - gdu
   - plocate
   - tldr
 
@@ -49,8 +58,10 @@ ubuntu_packages:
 
 # Jammy Jellyfish
 ubuntu_2204_packages:
+  - btop
   - bpytop
   - duf
+  - gdu
   - neofetch
   - plocate
 
@@ -120,6 +131,7 @@ redhat_7_epel_packages:
   - tldr
 
 fedora_packages:
+  - btop
   - colordiff
   - glances
   - htop
