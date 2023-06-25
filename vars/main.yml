@@ -43,10 +43,6 @@ debian10_packages:
   - tldr
   - mlocate
 
-# Stretch
-debian9_packages:
-  - mlocate
-
 # Ubuntu
 ubuntu_packages:
   - colordiff
@@ -75,10 +71,6 @@ ubuntu_2004_packages:
 ubuntu_1804_packages:
   - neofetch
   - tldr
-  - mlocate
-
-# Xenial Xerus
-ubuntu_1604_packages:
   - mlocate
 
 redhat_packages:
