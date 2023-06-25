@@ -11,7 +11,6 @@ global_packages:
 #Debian Family
 debian_family_packages:
   - colordiff
-  - glances
   - htop
   - iftop
   - jq
@@ -26,9 +25,10 @@ debian_packages:
 
 # Bookworm
 debian12_packages:
-  - btop
   - bpytop
+  - btop
   - gdu
+  - glances
   - plocate
 
 # Bullseye
@@ -39,10 +39,12 @@ debian11_packages:
 
 # Buster
 debian10_packages:
+  - glances
   - mlocate
 
 # Ubuntu
 ubuntu_packages:
+  - glances
 
 # Jammy Jellyfish
 ubuntu_2204_packages:
