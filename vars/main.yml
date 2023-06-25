@@ -19,6 +19,7 @@ debian_family_packages:
   - mailutils
   - ncdu
   - neofetch
+  - tldr
 
 # Debian
 debian_packages:
@@ -29,28 +30,19 @@ debian12_packages:
   - bpytop
   - gdu
   - plocate
-  - tldr
 
 # Bullseye
 debian11_packages:
   - bpytop
   - gdu
   - plocate
-  - tldr
 
 # Buster
 debian10_packages:
-  - tldr
   - mlocate
 
 # Ubuntu
 ubuntu_packages:
-  - colordiff
-  - glances
-  - htop
-  - iftop
-  - lynx
-  - ncdu
 
 # Jammy Jellyfish
 ubuntu_2204_packages:
@@ -58,19 +50,14 @@ ubuntu_2204_packages:
   - bpytop
   - duf
   - gdu
-  - neofetch
   - plocate
 
 # Focal Fossa
 ubuntu_2004_packages:
-  - neofetch
-  - tldr
   - mlocate
 
 # Bionic Beaver
 ubuntu_1804_packages:
-  - neofetch
-  - tldr
   - mlocate
 
 redhat_packages:
