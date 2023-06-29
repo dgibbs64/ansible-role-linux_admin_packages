@@ -1,15 +1,6 @@
 # linux_admin_packages
 
-An [Ansible](https://www.ansible.com) role that:
-
-- installs various useful packages for Linux Administrators on Debian and RedHat based distros.
-- adds global basic vimrc from [amix](https://github.com/amix/vimrc).
-- adds date stamps to history.
-- enables systat logging `/var/log/sysstat`.
-
-Packages installed:
-
-Please see [vars/main.yml](https://github.com/dgibbs64/ansible-role-linux_admin_packages/blob/main/vars/main.yml) for the list of packages installed.
+An [Ansible](https://www.ansible.com) role that installs useful packages for Linux Administrators
 
 <p align="center">
 <a href="https://app.codacy.com/gh/dgibbs64/ansible-role-linux_admin_packages"><img src="https://img.shields.io/codacy/grade/1a892d499efd4dabb73beffa8d64ed01?logo=codacy&style=flat-square" alt="Codacy grade"></a>
@@ -19,6 +10,17 @@ Please see [vars/main.yml](https://github.com/dgibbs64/ansible-role-linux_admin_
 <a href="https://galaxy.ansible.com/dgibbs64/linux_admin_packages"><img alt="GitHub tag (latest by date)" src="https://img.shields.io/github/v/tag/dgibbs64/ansible-role-linux_admin_packages?color=EE0000&label=release&logo=ansible&style=flat-square"></a>
 <a href="/LICENSE.md"><img src="https://img.shields.io/github/license/dgibbs64/ansible-role-linux_admin_packages?style=flat-square" alt="MIT License"></a>
 </p>
+
+## About
+
+This role:
+
+- installs various useful packages for Linux Administrators on Debian and RedHat based distros.
+- adds global basic vimrc from [amix](https://github.com/amix/vimrc).
+- adds date stamps to history.
+- enables systat logging `/var/log/sysstat`.
+
+Please see [vars/main.yml](https://github.com/dgibbs64/ansible-role-linux_admin_packages/blob/main/vars/main.yml) for the list of packages installed.
 
 ## Requirements
 
