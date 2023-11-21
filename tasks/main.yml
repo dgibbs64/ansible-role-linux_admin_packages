@@ -15,7 +15,10 @@
       ansible.builtin.include_tasks: historydate.yml
 
     - name: "Vimrc"
-      ansible.builtin.include_tasks: vimrc.yml
+      ansible.builtin.include_tasks: vim.yml
 
     - name: "Sysstat"
       ansible.builtin.include_tasks: sysstat.yml
+
+    - name: "Gdu"
+      ansible.builtin.include_tasks: gdu.yml

@@ -1,0 +1,17 @@
+---
+- name: Get installed packages
+  ansible.builtin.package_facts:
+    manager: auto
+
+- name: "Ensure ncdu is removed"
+  ansible.builtin.package:
+    name: ncdu
+    state: absent
+  when: "'gdu' in ansible_facts.packages"
+
+- name: "Ensure ncdu symlinks to gdu"
+  ansible.builtin.file:
+    src: /usr/bin/gdu
+    dest: /usr/bin/ncdu
+    state: link
+  when: "'gdu' in ansible_facts.packages"

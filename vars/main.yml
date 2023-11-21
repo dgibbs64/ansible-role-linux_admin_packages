@@ -10,6 +10,7 @@ global_packages:
 
 #Debian Family
 debian_family_packages:
+  - "{{ vimtype }}"
   - colordiff
   - htop
   - iftop
@@ -18,7 +19,6 @@ debian_family_packages:
   - mailutils
   - ncdu
   - neofetch
-  - neovim
   - tldr
 
 # Debian
@@ -72,12 +72,12 @@ redhat_9_packages:
   - s-nail
 
 redhat_9_epel_packages:
+  - "{{ vimtype }}"
   - colordiff
   - glances
   - htop
   - iftop
   - ncdu
-  - neovim
   - neofetch
   - tldr
 
@@ -87,13 +87,13 @@ redhat_8_packages:
   - mlocate
 
 redhat_8_epel_packages:
+  - "{{ vimtype }}"
   - bpytop
   - colordiff
   - glances
   - htop
   - iftop
   - ncdu
-  - neovim
   - neofetch
   - tldr
 
@@ -106,16 +106,17 @@ redhat_7_packages:
   - mlocate
 
 redhat_7_epel_packages:
+  - "{{ vimtype }}"
   - colordiff
   - glances
   - htop
   - iftop
   - jq
   - ncdu
-  - neovim
   - tldr
 
 fedora_packages:
+  - "{{ vimtype }}"
   - btop
   - colordiff
   - glances
@@ -124,7 +125,6 @@ fedora_packages:
   - lynx
   - mlocate
   - ncdu
-  - neovim
   - neofetch
   - s-nail
   - tldr
