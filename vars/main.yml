@@ -6,18 +6,16 @@ global_packages:
   - sysstat
   - unzip
   - zip
-  - vim
 
-#Debian Family
+# Debian Family
 debian_family_packages:
-  - "{{ vitype }}"
+  - neovim
   - colordiff
   - htop
   - iftop
   - jq
   - lynx
   - mailutils
-  - ncdu
   - neofetch
   - tldr
 
@@ -42,6 +40,7 @@ debian11_packages:
 debian10_packages:
   - glances
   - mlocate
+  - ncdu
 
 # Ubuntu
 ubuntu_packages:
@@ -58,10 +57,12 @@ ubuntu_2204_packages:
 # Focal Fossa
 ubuntu_2004_packages:
   - mlocate
+  - ncdu
 
 # Bionic Beaver
 ubuntu_1804_packages:
   - mlocate
+  - ncdu
 
 redhat_packages:
 
@@ -72,7 +73,7 @@ redhat_9_packages:
   - s-nail
 
 redhat_9_epel_packages:
-  - "{{ vitype }}"
+  - neovim
   - colordiff
   - glances
   - htop
@@ -87,7 +88,7 @@ redhat_8_packages:
   - mlocate
 
 redhat_8_epel_packages:
-  - "{{ vitype }}"
+  - neovim
   - bpytop
   - colordiff
   - glances
@@ -106,7 +107,7 @@ redhat_7_packages:
   - mlocate
 
 redhat_7_epel_packages:
-  - "{{ vitype }}"
+  - neovim
   - colordiff
   - glances
   - htop
@@ -116,7 +117,7 @@ redhat_7_epel_packages:
   - tldr
 
 fedora_packages:
-  - "{{ vitype }}"
+  - neovim
   - btop
   - colordiff
   - glances
