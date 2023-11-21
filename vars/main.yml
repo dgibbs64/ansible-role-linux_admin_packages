@@ -10,7 +10,7 @@ global_packages:
 
 #Debian Family
 debian_family_packages:
-  - "{{ vimtype }}"
+  - "{{ vitype }}"
   - colordiff
   - htop
   - iftop
@@ -72,7 +72,7 @@ redhat_9_packages:
   - s-nail
 
 redhat_9_epel_packages:
-  - "{{ vimtype }}"
+  - "{{ vitype }}"
   - colordiff
   - glances
   - htop
@@ -87,7 +87,7 @@ redhat_8_packages:
   - mlocate
 
 redhat_8_epel_packages:
-  - "{{ vimtype }}"
+  - "{{ vitype }}"
   - bpytop
   - colordiff
   - glances
@@ -106,7 +106,7 @@ redhat_7_packages:
   - mlocate
 
 redhat_7_epel_packages:
-  - "{{ vimtype }}"
+  - "{{ vitype }}"
   - colordiff
   - glances
   - htop
@@ -116,7 +116,7 @@ redhat_7_epel_packages:
   - tldr
 
 fedora_packages:
-  - "{{ vimtype }}"
+  - "{{ vitype }}"
   - btop
   - colordiff
   - glances
