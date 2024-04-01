@@ -1,4 +1,4 @@
-]]---
+---
 name: Ansible Galaxy
 on:
   workflow_dispatch:
