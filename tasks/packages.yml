@@ -10,6 +10,12 @@
     update_cache: true
   when: ansible_os_family == "RedHat"
 
+- name: "Ensure rpm-python is installed (rpm/zypper)"
+  ansible.builtin.package:
+    name: python3-rpm
+    state: present
+  when: ansible_os_family == "RedHat" or ansible_os_family == "Suse"
+
 - name: "Ensure linux admin packages are available"
   ansible.builtin.package:
     name: "{{ global_packages }}"
