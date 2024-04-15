@@ -5,6 +5,11 @@
     cache_valid_time: 3600
   when: ansible_os_family == "Debian"
 
+- name: "Ensure dnf cache is up to date"
+  ansible.builtin.dnf:
+    update_cache: true
+  when: ansible_os_family == "RedHat"
+
 - name: "Ensure linux admin packages are available"
   ansible.builtin.package:
     name: "{{ global_packages }}"
