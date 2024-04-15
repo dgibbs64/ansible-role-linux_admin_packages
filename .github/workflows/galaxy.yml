@@ -1,8 +1,10 @@
-]]---
+---
 name: Ansible Galaxy
 on:
   workflow_dispatch:
   push:
+    paths:
+      - "README.md"
     tags:
       - "*"
 
