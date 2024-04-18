@@ -4,7 +4,7 @@ galaxy_info:
   company: none
   description: Useful packages and settings for Linux Administrators
   license: MIT
-  min_ansible_version: "2.12"
+  min_ansible_version: "2.13"
   namespace: dgibbs64
   role_name: linux_admin_packages
 
