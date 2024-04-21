@@ -1,0 +1,28 @@
+---
+- name: "Test if history_time_format is set correctly"
+  ansible.builtin.assert:
+    that:
+      - history_time_format is defined
+      - history_time_format is boolean
+    quiet: true
+
+- name: "Test if systat_logging_enabled is set correctly"
+  ansible.builtin.assert:
+    that:
+      - systat_logging_enabled is defined
+      - systat_logging_enabled is boolean
+    quiet: true
+
+- name: "Test if vimrc is set correctly"
+  ansible.builtin.assert:
+    that:
+      - vimrc is defined
+      - vimrc is boolean
+    quiet: true
+
+- name: "Test if epel_repofile_path is set correctly"
+  ansible.builtin.assert:
+    that:
+      - epel_repofile_path is defined
+      - epel_repofile_path is string
+    quiet: true
