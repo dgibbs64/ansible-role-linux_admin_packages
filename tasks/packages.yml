@@ -49,11 +49,17 @@
   when: ansible_distribution == "Debian" and ansible_distribution_major_version == "10"
 
 # Ubuntu
-- name: "Ensure universe repo is enabled (Ubuntu)"
+- name: "Ensure universe repo is enabled (Ubuntu for non-arm64)"
   ansible.builtin.apt_repository:
     repo: "deb http://archive.ubuntu.com/ubuntu {{ ansible_distribution_release }} universe"
     state: present
-  when: ansible_distribution == "Ubuntu"
+  when: ansible_distribution == "Ubuntu" and ansible_architecture != "aarch64"
+
+- name: "Ensure universe repo is enabled (Ubuntu for arm64)"
+  ansible.builtin.apt_repository:
+    repo: "deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports {{ ansible_distribution_release }} universe"
+    state: present
+  when: ansible_distribution == "Ubuntu" and ansible_architecture == "aarch64"
 
 - name: "Ensure linux admin packages are available (Ubuntu)"
   ansible.builtin.apt:
