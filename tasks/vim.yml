@@ -10,6 +10,15 @@
     state: "absent"
   when: "'neovim' in ansible_facts.packages"
 
+- name: "Ensure .config/nvim directory exists"
+  ansible.builtin.file:
+    path: "{{ lookup('env', 'HOME') }}/.config/nvim"
+    state: directory
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_gid }}"
+    mode: '0755'
+  when: "'neovim' in ansible_facts.packages and disable_neovim_mouse_support"
+
 - name: "Ensure init.vim exists"
   ansible.builtin.file:
     path: "{{ lookup('env', 'HOME') }}/.config/nvim/init.vim"
