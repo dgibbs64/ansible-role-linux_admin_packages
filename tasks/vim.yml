@@ -17,7 +17,7 @@
     owner: "{{ ansible_user_id }}"
     group: "{{ ansible_user_gid }}"
     mode: '0644'
-  when: "'neovim' in ansible_facts.packages and (disable_neovim_mouse_support | default(false))"
+  when: "'neovim' in ansible_facts.packages and disable_neovim_mouse_support"
 
 - name: "Disable mouse support in neovim"
   ansible.builtin.lineinfile:
