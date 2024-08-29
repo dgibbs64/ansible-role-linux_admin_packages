@@ -9,3 +9,10 @@
     name: "vim"
     state: "absent"
   when: "'neovim' in ansible_facts.packages"
+
+- name: "Disable mouse support in neovim"
+  ansible.builtin.lineinfile:
+    path: "{{ lookup('env', 'HOME') }}/.config/nvim/init.vim"
+    line: "set mouse="
+    state: present
+  when: "'neovim' in ansible_facts.packages and disable_neovim_mouse_support"

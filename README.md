@@ -30,6 +30,7 @@ None.
 history_time_format: true
 systat_logging_enabled: true
 vimrc: true
+disable_neovim_mouse_support: false
 ```
 
 ## Dependencies
