@@ -1,5 +1,5 @@
 ---
-- name: Get installed packages
+- name: "Get installed packages"
   ansible.builtin.package_facts:
     manager: auto
   when: ansible_facts.packages is not defined
@@ -16,7 +16,13 @@
     state: directory
     owner: "{{ ansible_user_id }}"
     group: "{{ ansible_user_gid }}"
-    mode: '0755'
+    mode: "0755"
+  when: "'neovim' in ansible_facts.packages and disable_neovim_mouse_support"
+
+- name: "Check if init.vim exists"
+  ansible.builtin.stat:
+    path: "{{ lookup('env', 'HOME') }}/.config/nvim/init.vim"
+  register: init_vim_stat
   when: "'neovim' in ansible_facts.packages and disable_neovim_mouse_support"
 
 - name: "Ensure init.vim exists"
@@ -25,8 +31,8 @@
     state: touch
     owner: "{{ ansible_user_id }}"
     group: "{{ ansible_user_gid }}"
-    mode: '0644'
-  when: "'neovim' in ansible_facts.packages and disable_neovim_mouse_support"
+    mode: "0644"
+  when: "'neovim' in ansible_facts.packages and disable_neovim_mouse_support and not init_vim_stat.stat.exists"
 
 - name: "Disable mouse support in neovim"
   ansible.builtin.lineinfile:

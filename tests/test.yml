@@ -1,0 +1,8 @@
+---
+- name: "Test"
+  hosts: all
+  gather_facts: false
+  vars:
+    disable_neovim_mouse_support: true
+  roles:
+    - "../../ansible-role-linux_admin_packages"

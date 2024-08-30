@@ -1,7 +1,8 @@
 ---
-- name: Get installed packages
+- name: "Get installed packages"
   ansible.builtin.package_facts:
     manager: auto
+  when: ansible_facts.packages is not defined
 
 - name: "Ensure ncdu is removed"
   ansible.builtin.package:
