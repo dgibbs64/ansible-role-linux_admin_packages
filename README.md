@@ -16,6 +16,7 @@ This role:
 - adds global basic vimrc from [amix](https://github.com/amix/vimrc).
 - adds date stamps to history.
 - enables systat logging `/var/log/sysstat`.
+- installs neoVim, removes other vi/vim packages and can disable mouse support for current and root user.
 
 Please see [vars/main.yml](https://github.com/dgibbs64/ansible-role-linux_admin_packages/blob/main/vars/main.yml) for the list of packages installed.
 
