@@ -10,7 +10,7 @@
     state: "absent"
   when: "'neovim' in ansible_facts.packages"
 
-- name: "Ensure .config/nvim directory exists"
+- name: "Ensure .config/nvim directory exists for current user"
   ansible.builtin.file:
     path: "{{ lookup('env', 'HOME') }}/.config/nvim"
     state: directory
@@ -19,13 +19,13 @@
     mode: "0755"
   when: "'neovim' in ansible_facts.packages and disable_neovim_mouse_support"
 
-- name: "Check if init.vim exists"
+- name: "Check if init.vim exists for current user"
   ansible.builtin.stat:
     path: "{{ lookup('env', 'HOME') }}/.config/nvim/init.vim"
   register: init_vim_stat
   when: "'neovim' in ansible_facts.packages and disable_neovim_mouse_support"
 
-- name: "Ensure init.vim exists"
+- name: "Ensure init.vim exists for current user"
   ansible.builtin.file:
     path: "{{ lookup('env', 'HOME') }}/.config/nvim/init.vim"
     state: touch
@@ -34,9 +34,40 @@
     mode: "0644"
   when: "'neovim' in ansible_facts.packages and disable_neovim_mouse_support and not init_vim_stat.stat.exists"
 
-- name: "Disable mouse support in neovim"
+- name: "Disable mouse support in neovim for current user"
   ansible.builtin.lineinfile:
     path: "{{ lookup('env', 'HOME') }}/.config/nvim/init.vim"
+    line: "set mouse="
+    state: present
+  when: "'neovim' in ansible_facts.packages and disable_neovim_mouse_support"
+
+- name: "Ensure .config/nvim directory exists for root user"
+  ansible.builtin.file:
+    path: "/root/.config/nvim"
+    state: directory
+    owner: "root"
+    group: "root"
+    mode: "0755"
+  when: "'neovim' in ansible_facts.packages and disable_neovim_mouse_support"
+
+- name: "Check if init.vim exists for root user"
+  ansible.builtin.stat:
+    path: "/root/.config/nvim/init.vim"
+  register: init_vim_stat_root
+  when: "'neovim' in ansible_facts.packages and disable_neovim_mouse_support"
+
+- name: "Ensure init.vim exists for root user"
+  ansible.builtin.file:
+    path: "/root/.config/nvim/init.vim"
+    state: touch
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  when: "'neovim' in ansible_facts.packages and disable_neovim_mouse_support and not init_vim_stat_root.stat.exists"
+
+- name: "Disable mouse support in neovim for root user"
+  ansible.builtin.lineinfile:
+    path: "/root/.config/nvim/init.vim"
     line: "set mouse="
     state: present
   when: "'neovim' in ansible_facts.packages and disable_neovim_mouse_support"
