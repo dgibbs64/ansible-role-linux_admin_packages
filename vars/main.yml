@@ -46,6 +46,14 @@ debian10_packages:
 ubuntu_packages:
   - glances
 
+# Noble Numbat
+ubuntu_2404_packages:
+  - btop
+  - bpytop
+  - duf
+  - gdu
+  - plocate
+
 # Jammy Jellyfish
 ubuntu_2204_packages:
   - btop
