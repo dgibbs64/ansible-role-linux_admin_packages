@@ -19,7 +19,7 @@ debian_family_packages:
   - tldr
 
 # Debian
-debian_packages:
+debian_packages: []
 
 # Trixie
 debian13_packages:
