@@ -11,44 +11,44 @@
     state: present
   when: ansible_os_family == "RedHat" or ansible_os_family == "Suse"
 
-- name: "Ensure linux admin packages are available"
+- name: "Ensure linux admin packages are installed"
   ansible.builtin.package:
     name: "{{ global_packages }}"
     state: latest
 
 # Debian Family
-- name: "Ensure linux admin packages are available (Debian Family)"
+- name: "Ensure linux admin packages are installed (Debian Family)"
   ansible.builtin.apt:
     name: "{{ debian_family_packages }}"
     state: latest
   when: ansible_os_family == "Debian"
 
 # Debian
-- name: "Ensure linux admin packages are available (Debian)"
+- name: "Ensure linux admin packages are installed (Debian)"
   ansible.builtin.apt:
     name: "{{ debian_packages }}"
     state: latest
   when: ansible_distribution == "Debian" and debian_packages | length > 0
 
-- name: "Ensure linux admin packages are available (Debian 13)"
+- name: "Ensure linux admin packages are installed (Debian 13)"
   ansible.builtin.apt:
     name: "{{ debian13_packages }}"
     state: latest
   when: ansible_distribution == "Debian" and ansible_distribution_major_version == "13"
 
-- name: "Ensure linux admin packages are available (Debian 12)"
+- name: "Ensure linux admin packages are installed (Debian 12)"
   ansible.builtin.apt:
     name: "{{ debian12_packages }}"
     state: latest
   when: ansible_distribution == "Debian" and ansible_distribution_major_version == "12"
 
-- name: "Ensure linux admin packages are available (Debian 11)"
+- name: "Ensure linux admin packages are installed (Debian 11)"
   ansible.builtin.apt:
     name: "{{ debian11_packages }}"
     state: latest
   when: ansible_distribution == "Debian" and ansible_distribution_major_version == "11"
 
-- name: "Ensure linux admin packages are available (Debian 10)"
+- name: "Ensure linux admin packages are installed (Debian 10)"
   ansible.builtin.apt:
     name: "{{ debian10_packages }}"
     state: latest
@@ -67,37 +67,37 @@
     state: present
   when: ansible_distribution == "Ubuntu" and ansible_architecture == "aarch64"
 
-- name: "Ensure linux admin packages are available (Ubuntu)"
+- name: "Ensure linux admin packages are installed (Ubuntu)"
   ansible.builtin.apt:
     name: "{{ ubuntu_packages }}"
     state: latest
   when: ansible_distribution == "Ubuntu"
 
-- name: "Ensure linux admin packages are available (Ubuntu 26.04+)"
+- name: "Ensure linux admin packages are installed (Ubuntu 26.04+)"
   ansible.builtin.apt:
     name: "{{ ubuntu_2604_packages }}"
     state: latest
   when: ansible_distribution == "Ubuntu" and ansible_distribution_major_version | int >= 26
 
-- name: "Ensure linux admin packages are available (Ubuntu 24.04)"
+- name: "Ensure linux admin packages are installed (Ubuntu 24.04)"
   ansible.builtin.apt:
     name: "{{ ubuntu_2404_packages }}"
     state: latest
   when: ansible_distribution == "Ubuntu" and ansible_distribution_release == "noble"
 
-- name: "Ensure linux admin packages are available (Ubuntu 22.04)"
+- name: "Ensure linux admin packages are installed (Ubuntu 22.04)"
   ansible.builtin.apt:
     name: "{{ ubuntu_2204_packages }}"
     state: latest
   when: ansible_distribution == "Ubuntu" and ansible_distribution_release == "jammy"
 
-- name: "Ensure linux admin packages are available (Ubuntu 20.04)"
+- name: "Ensure linux admin packages are installed (Ubuntu 20.04)"
   ansible.builtin.apt:
     name: "{{ ubuntu_2004_packages }}"
     state: latest
   when: ansible_distribution == "Ubuntu" and ansible_distribution_release == "focal"
 
-- name: "Ensure linux admin packages are available (Ubuntu 18.04)"
+- name: "Ensure linux admin packages are installed (Ubuntu 18.04)"
   ansible.builtin.apt:
     name: "{{ ubuntu_1804_packages }}"
     state: latest
@@ -111,13 +111,13 @@
   register: epel_repofile_result
   when: ansible_os_family == "RedHat"
 
-- name: "Ensure linux admin packages are available (RedHat 10 Family)"
+- name: "Ensure linux admin packages are installed (RedHat 10 Family)"
   ansible.builtin.dnf:
     name: "{{ redhat_10_packages }}"
     state: latest
   when: ansible_os_family == "RedHat" and ansible_distribution_major_version == "10"
 
-- name: "Ensure linux admin packages are available (RedHat 10 Family) (epel)"
+- name: "Ensure linux admin packages are installed (RedHat 10 Family) (epel)"
   ansible.builtin.dnf:
     name: "{{ redhat_10_epel_packages }}"
     state: latest
@@ -126,13 +126,13 @@
     - ansible_distribution_major_version == "10"
     - epel_repofile_result.stat.exists
 
-- name: "Ensure linux admin packages are available (RedHat 9 Family)"
+- name: "Ensure linux admin packages are installed (RedHat 9 Family)"
   ansible.builtin.dnf:
     name: "{{ redhat_9_packages }}"
     state: latest
   when: ansible_os_family == "RedHat" and ansible_distribution_major_version == "9"
 
-- name: "Ensure linux admin packages are available (RedHat 9 Family) (epel)"
+- name: "Ensure linux admin packages are installed (RedHat 9 Family) (epel)"
   ansible.builtin.dnf:
     name: "{{ redhat_9_epel_packages }}"
     state: latest
@@ -141,13 +141,13 @@
     - ansible_distribution_major_version == "9"
     - epel_repofile_result.stat.exists
 
-- name: "Ensure linux admin packages are available (RedHat 8 Family)"
+- name: "Ensure linux admin packages are installed (RedHat 8 Family)"
   ansible.builtin.dnf:
     name: "{{ redhat_8_packages }}"
     state: latest
   when: ansible_os_family == "RedHat" and ansible_distribution_major_version == "8"
 
-- name: "Ensure linux admin packages are available (RedHat 8 Family) (epel)"
+- name: "Ensure linux admin packages are installed (RedHat 8 Family) (epel)"
   ansible.builtin.dnf:
     name: "{{ redhat_8_epel_packages }}"
     state: latest
@@ -156,14 +156,14 @@
     - ansible_distribution_major_version == "8"
     - epel_repofile_result.stat.exists
 
-- name: "Ensure linux admin packages are available (Fedora)"
+- name: "Ensure linux admin packages are installed (Fedora)"
   ansible.builtin.dnf:
     name: "{{ fedora_packages }}"
     state: latest
   when: ansible_os_family == "RedHat" and ansible_distribution == "Fedora"
 
 # openSUSE
-- name: "Ensure linux admin packages are available (openSUSE)"
+- name: "Ensure linux admin packages are installed (openSUSE)"
   community.general.zypper:
     name: "{{ opensuse_packages }}"
     state: latest
