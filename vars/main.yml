@@ -16,16 +16,24 @@ debian_family_packages:
   - jq
   - lynx
   - mailutils
-  - neofetch
   - tldr
 
 # Debian
 debian_packages:
 
+# Trixie
+debian13_packages:
+  - btop
+  - fastfetch
+  - gdu
+  - glances
+  - plocate
+
 # Bookworm
 debian12_packages:
   - bpytop
   - btop
+  - fastfetch
   - gdu
   - glances
   - plocate
@@ -46,11 +54,20 @@ debian10_packages:
 ubuntu_packages:
   - glances
 
+# Plucky Puffin / 26.04+
+ubuntu_2604_packages:
+  - btop
+  - duf
+  - fastfetch
+  - gdu
+  - plocate
+
 # Noble Numbat
 ubuntu_2404_packages:
   - btop
   - bpytop
   - duf
+  - fastfetch
   - gdu
   - plocate
 
@@ -59,6 +76,7 @@ ubuntu_2204_packages:
   - btop
   - bpytop
   - duf
+  - fastfetch
   - gdu
   - plocate
 
@@ -74,6 +92,22 @@ ubuntu_1804_packages:
 
 redhat_packages:
 
+redhat_10_packages:
+  - jq
+  - lynx
+  - s-nail
+
+redhat_10_epel_packages:
+  - neovim
+  - btop
+  - colordiff
+  - fastfetch
+  - glances
+  - htop
+  - iftop
+  - ncdu
+  - tldr
+
 redhat_9_packages:
   - jq
   - lynx
@@ -82,12 +116,13 @@ redhat_9_packages:
 
 redhat_9_epel_packages:
   - neovim
+  - btop
   - colordiff
+  - fastfetch
   - glances
   - htop
   - iftop
   - ncdu
-  - neofetch
   - tldr
 
 redhat_8_packages:
@@ -103,7 +138,6 @@ redhat_8_epel_packages:
   - htop
   - iftop
   - ncdu
-  - neofetch
   - tldr
 
 redhat_8_powertools_packages:
@@ -128,12 +162,23 @@ fedora_packages:
   - neovim
   - btop
   - colordiff
+  - fastfetch
   - glances
   - htop
   - iftop
   - lynx
   - mlocate
   - ncdu
-  - neofetch
   - s-nail
+  - tldr
+
+opensuse_packages:
+  - neovim
+  - btop
+  - colordiff
+  - htop
+  - iftop
+  - jq
+  - lynx
+  - ncdu
   - tldr
