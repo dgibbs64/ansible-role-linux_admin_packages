@@ -33,7 +33,6 @@ debian13_packages:
 debian12_packages:
   - bpytop
   - btop
-  - fastfetch
   - gdu
   - glances
   - plocate
@@ -76,7 +75,6 @@ ubuntu_2204_packages:
   - btop
   - bpytop
   - duf
-  - fastfetch
   - gdu
   - plocate
 
