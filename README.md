@@ -2,10 +2,12 @@
 
 An [Ansible](https://www.ansible.com) role that installs useful packages for Linux Administrators
 
+<!-- markdownlint-disable MD013 -->
 <p align="center">
 <a href="https://github.com/dgibbs64/ansible-role-linux_admin_packages/actions/workflows/action-molecule.yml"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/dgibbs64/ansible-role-linux_admin_packages/action-molecule.yml?label=molecule&logo=ansible&style=flat-square"></a> <a href="https://galaxy.ansible.com/dgibbs64/linux_admin_packages"><img alt="GitHub tag (latest by date)" src="https://img.shields.io/github/v/tag/dgibbs64/ansible-role-linux_admin_packages?color=EE0000&label=release&logo=ansible&style=flat-square"></a>
 <a href="/LICENSE.md"><img src="https://img.shields.io/github/license/dgibbs64/ansible-role-linux_admin_packages?style=flat-square" alt="MIT License"></a>
 </p>
+<!-- markdownlint-enable MD013 -->
 
 ## About
 
