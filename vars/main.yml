@@ -16,7 +16,6 @@ debian_family_packages:
   - jq
   - lynx
   - mailutils
-  - tldr
 
 # Debian
 debian_packages: []
@@ -32,6 +31,7 @@ debian13_packages:
 # Bookworm
 debian12_packages:
   - bpytop
+  - tldr
   - btop
   - gdu
   - glances
@@ -40,6 +40,7 @@ debian12_packages:
 # Bullseye
 debian11_packages:
   - bpytop
+  - tldr
   - gdu
   - plocate
 
@@ -66,13 +67,13 @@ ubuntu_2404_packages:
   - btop
   - bpytop
   - duf
-  - fastfetch
   - gdu
   - plocate
 
 # Jammy Jellyfish
 ubuntu_2204_packages:
   - btop
+  - tldr
   - bpytop
   - duf
   - gdu
@@ -100,11 +101,9 @@ redhat_10_epel_packages:
   - btop
   - colordiff
   - fastfetch
-  - glances
   - htop
   - iftop
   - ncdu
-  - tldr
 
 redhat_9_packages:
   - jq
@@ -121,7 +120,6 @@ redhat_9_epel_packages:
   - htop
   - iftop
   - ncdu
-  - tldr
 
 redhat_8_packages:
   - jq
@@ -136,7 +134,6 @@ redhat_8_epel_packages:
   - htop
   - iftop
   - ncdu
-  - tldr
 
 redhat_8_powertools_packages:
   - lynx
@@ -154,7 +151,6 @@ redhat_7_epel_packages:
   - iftop
   - jq
   - ncdu
-  - tldr
 
 fedora_packages:
   - neovim
@@ -179,4 +175,3 @@ opensuse_packages:
   - jq
   - lynx
   - ncdu
-  - tldr
