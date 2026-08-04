@@ -13,6 +13,6 @@
 - name: "Ensure ncdu symlinks to gdu"
   ansible.builtin.file:
     src: /usr/bin/gdu
-    dest: /usr/bin/ncdu
+    dest: /usr/local/bin/ncdu
     state: link
   when: "'gdu' in ansible_facts.packages"
