@@ -33,6 +33,7 @@ None.
 history_time_format: true
 systat_logging_enabled: true
 vimrc: true
+epel_repofile_path: "/etc/yum.repos.d/epel.repo"
 disable_neovim_mouse_support: false
 ```
 
